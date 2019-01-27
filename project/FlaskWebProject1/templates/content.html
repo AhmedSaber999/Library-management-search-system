@@ -1,0 +1,17 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<div class="form-group">
+    {% for row in book %}
+    {% for item in row %}
+    <h1>  <span class="badge badge-primary">{{ item }}</span></h1>
+    {% endfor %}
+    {% endfor %}
+</div>
+<div class="form-group">
+    {% for row in author %}
+    {% for item in row %}
+    <h1>  <span class="badge badge-primary">{{ item }}</span></h1>
+    {% endfor %}
+    {% endfor %}
+</div>
+{% endblock content %}

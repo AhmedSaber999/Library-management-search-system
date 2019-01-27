@@ -1,0 +1,45 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="post" action="{{ url_for('delete') }}" >
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <h1><span class="label label-primary">Delete</span></h1>
+            <div class="form-group">
+                {{ form.author_name.label(class="form-control-label") }}
+                {% if form.author_name.errors %}
+                {{ form.author_name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.author_name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.author_name(class="form-control form-control-lg") }}
+                {% endif %}
+
+            </div>
+            <div class="form-group">
+                {{ form.name_book.label(class="form-control-label") }}
+                {% if form.name_book.errors %}
+                {{ form.name_book(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.name_book.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.name_book(class="form-control form-control-lg") }}
+                {% endif %}
+
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </fieldset>
+
+    </form>
+</div>
+{% endblock content %}
+
+

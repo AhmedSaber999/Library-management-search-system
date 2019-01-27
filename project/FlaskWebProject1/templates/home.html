@@ -1,0 +1,85 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <img src="/static/books.jpg" />
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Why US? ,, Why Reading ?? </legend>
+        <div class="form-group">
+            <dt> 🙊 👀 👤 </dt>
+            <p>
+                The benefits of reading are not limited to entertainment. You can learn and improve skills that can add value to your life. Reading novels to pass the time is a great way to exercise the brain. Read every day and you will see changes in your vocabulary and writing skills. Reading is a fundamental skill that every human should develop. You were forced to read when you were young but you should continue to read during adulthood. Let us explore some benefits of
+            </p>
+            <dt>Why reading is good for you ? </dt>
+            <P>
+                - Have you ever wonder why university students read for a degree? Reading is an activity that teaches us something that we don’t know. Whether you read educational or fictional novels you will learn something. You gain new knowledge when you read something outside of your field. You can improve your social skills with the wealth of knowledge gained from reading. Reading makes you interesting and you can engage in conversations easily.
+            </P>
+            <dt>Improves memory </dt>
+            <P>
+                - Reading is a mental stimulation exercise that will keep the brain active. It slows down your decline in mental power. Reading can preserve your memory in old age. Mental activities like reading can prevent Alzheimer’s. This is a type of dementia that causes memory problems. If you want to improve your memory then read at least one book per month.
+            </P>
+            <dt>Develop good analytical skills </dt>
+            <P>
+                - If you are reading a novel you will critique the author’s work. This is very common in literature class. Do not just limit this exercise to your literature class because this is a skill that can be useful in life. You can relate some stories to real life situation. Reading broadens your mind. You get to understand human and life better. If you need an activity to improve your critical thinking skill then reading is the answer.
+            </P>
+            <dt>Improve writing skills </dt>
+            <P>
+                - Practicing to write help to improve your writing skill however reading gives you a blueprint. Reading shows you how to write so you can follow and develop your skills. If you know a great writer then you should read their works and try to emulate their writing style. Writing is an art and you study it by reading.
+            </P>
+            <dt> Relaxation  </dt>
+            <P>
+                -Reading reduce stress and provide comfort. If you are facing problems in your life you can escape reality by reading an interesting novel. Reading can make your imagination run wild and put you in a world of your own. It is your alone time where you can relax and forget about your troubles for a while. Sometimes you need a break from reality.
+            </P>
+            <dt>Improve concentration  </dt>
+            <P>
+                - You cannot control the chatter of people while you read on the bus or the blaring music coming from your neighbor’s house. You have to continue read if you want to finish your novel. This requires focus and concentration. Reading strengthens your focus and concentration. Despite many distractions, you can focus on your primary task.
+            </P>
+            <dt> Wrapping up </dt>
+            <p>
+                Reading is not about entertainment as there are unseen benefits such as improved memory, focus, and concentration. Try to read one novel per month. If you can read more then that would be great.
+            </p>
+            <small class="text-muted ml-2">
+                <a href="#">more about benefits ?</a>
+            </small>
+        </div>
+    </fieldset>
+    <div class="border-top pt-3">
+        <img src="/static/page.jpg" />
+    </div>
+    <div class="form-group">
+        <dt> Read your favourite in  </dt>
+        <small class="text-muted ml-2">
+            <dt>  <a href="{{ url_for('book', ISBN = 0, lang = 'ar') }}">Arabic ❤ </a></dt>
+        </small>
+        <small class="text-muted ml-2">
+            <dt> <a href="{{ url_for('book', ISBN = 0, lang = 'en') }}">English ❤ </a></dt>
+        </small>
+        <small class="text-muted ml-2">
+            <dt> <a href="{{ url_for('book', ISBN = 0, lang = 'fr') }}">French ❤ </a></dt>
+        </small>
+    </div>
+    <div class="border-top pt-3">
+    </div>
+    <dt> You can read about! </dt>
+    <div class="col-md-20">
+        <div class="content-section">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-light"> <a class="article-title" href="{{ url_for('book', ISBN = 0, lang = 'Taction') }}"> Action </a> </li>
+                <li class="list-group-item list-group-item-light"> <a class="article-title" href="{{ url_for('book', ISBN = 0, lang = 'Tscience') }}"> Science </a> </li>
+                <li class="list-group-item list-group-item-light"> <a class="article-title" href="{{ url_for('book', ISBN = 0, lang = 'Tsports') }}"> Sports </a> </li>
+                <li class="list-group-item list-group-item-light"> <a class="article-title" href="{{ url_for('book', ISBN = 0, lang = 'Thistory') }}"> History </a> </li>
+                <li class="list-group-item list-group-item-light"> <a class="article-title" href="{{ url_for('book', ISBN = 0, lang = 'Tfamily') }}"> Family </a> </li>
+                <li class="list-group-item list-group-item-light"> <a class="article-title" href="{{ url_for('book', ISBN = 0, lang = 'Tlove') }}"> Love </a> </li>
+                <li class="list-group-item list-group-item-light"> <a class="article-title" href="{{ url_for('book', ISBN = 0, lang = 'Twar') }}"> War </a> </li>
+                <li class="list-group-item list-group-item-light"> <a class="article-title" href="{{ url_for('book', ISBN = 0, lang = 'Tlife') }}"> life </a> </li>
+                <li class="list-group-item list-group-item-light">
+                    <a class="article-title" href="#">
+                        <small class="text-muted ml-2">
+                            <a href="#">more ?</a>
+                        </small>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

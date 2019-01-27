@@ -1,0 +1,68 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+
+<div class="content-section">
+    <form method="POST" action="{{ url_for('book', ISBN=0) }}">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Search by title</legend>
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label") }}
+                {% if form.title.errors %}
+                {{ form.title(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.title.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.title(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.lang.label(class="form-control-label") }}
+                {% if form.lang.errors %}
+                {{ form.lang(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.lang.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.lang(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.type.label(class="form-control-label") }}
+                {% if form.type.errors %}
+                {{ form.type(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.type.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.type(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+    <div class="form-group">
+            <h1>Books</h1>
+            {% for row in book %}
+            <h1>
+                <span class="badge badge-info">
+                    {{ row.title }}
+                </span>
+                <a href="http://127.0.0.1:8887/{{ row.TheBook }}">{{ form.view(class="btn btn-outline-info") }}</a>
+                <a href="http://127.0.0.1:8887/{{ row.TheBook }}" download target="_blank">{{ form.download(class="btn btn-outline-info") }}</a>
+                {% if st == "yes" %}
+                <a href="{{ url_for ('book', ISBN = row.ISBN)}}">{{ form.bookmark(class="btn btn-outline-info") }}</a>
+                {% endif %}
+            </h1>
+            {% endfor %}    </div>
+</div>
+{% endblock content %}

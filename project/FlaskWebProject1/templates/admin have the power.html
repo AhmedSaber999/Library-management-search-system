@@ -1,0 +1,21 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+<div class="form-group">
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Delete users </legend>
+        {% for row in users %}
+            {% if row.email !="admin@blog.com" %}
+            <h1>
+                <span class="badge badge-info">
+                    {{ row.email }}
+                </span>
+
+                <a href={{ url_for('admin_have_the_power', mail = row.email)}}><button class="btn btn-outline-info">remove</button></a>
+            </h1>
+            {% endif %}
+        {% endfor%}
+    </fieldset>
+</div>
+</div>
+ {% endblock content %}
